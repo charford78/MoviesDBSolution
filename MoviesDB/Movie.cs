@@ -15,6 +15,8 @@ namespace MoviesDB
         public int Released { get; set; } // year only
         public int RuntimeInMinutes { get; set; }
         public string Director { get; set; }
+        
+       
 
         public Movie() { }
 
@@ -28,6 +30,17 @@ namespace MoviesDB
             this.Released = released;
             this.RuntimeInMinutes = runtimeinminutes;
             this.Director = director;
+        }
+        public int RunTimeConvert(int hrs, int mins)
+        {
+            var runtimeinminutes = (hrs * 60) + mins;
+            this.RuntimeInMinutes = runtimeinminutes;
+            return runtimeinminutes;
+        }
+        public string Print()
+        {
+            var msg = $"The movie {this.Title} has a runtime of {this.RuntimeInMinutes} minutes.";
+            return msg;
         }
     }
 }
