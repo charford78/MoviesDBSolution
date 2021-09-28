@@ -6,35 +6,25 @@ namespace MoviesDB
     {
         static void Main(string[] args)
         {
-            var rotk = new Movie();
-            rotk.Title = "The Lord of the Rings: Return of the King";
-            rotk.RunTimeConvert(3, 21);
-            var message = rotk.Print();
-            Console.WriteLine(message);
-
-            var t2t = new Movie();
-            t2t.Title = "The Lord of the Rings: The Two Towers";
-            t2t.RunTimeConvert(2, 59);
-            message = t2t.Print();
-            Console.WriteLine(message);
-
-            var fotr = new Movie();
-            fotr.Title = "The Lord of the Rings: The Fellowship of the Ring";
-            fotr.RunTimeConvert(2, 58);
-            message = fotr.Print();
-            Console.WriteLine(message);
-
-            var jaws = new Movie();
-            jaws.Title = "Jaws";
-            jaws.RunTimeConvert(2, 4);
-            message = jaws.Print();
-            Console.WriteLine(message);
-
-            var labyrinth = new Movie();
-            labyrinth.Title = "Labyrinth";
-            labyrinth.RunTimeConvert(1, 41);
-            message = labyrinth.Print();
-            Console.WriteLine(message);
+            var rotk = new Movie("The Lord of the Rings: Return of the King", "fantasy", "PG-13",
+                2003, Movie.RunTimeConvert(3, 21), "Peter Jackson");
+            rotk.Print();
+            
+            var t2t = new Movie("The Lord of the Rings: The Two Towers", "fantasy", "PG-13",
+                2002, Movie.RunTimeConvert(2, 59), "Peter Jackson");
+            t2t.Print();
+            
+            var fotr = new Movie("The Lord of the Rings: The Fellowship of the Ring", "fantasy",
+                "PG-13", 2001, Movie.RunTimeConvert(2, 58), "Peter Jackson");
+            fotr.Print();
+            
+            var jaws = new Movie("Jaws", "horror", "PG", 1975, Movie.RunTimeConvert(2, 4),
+                "Steven Spielberg");
+            jaws.Print();
+            
+            var labyrinth = new Movie("Labyrinth", "fantasy", "PG", 1986, 
+                Movie.RunTimeConvert(1, 41), "Jim Henson");
+            labyrinth.Print();
         }
     }
 }
